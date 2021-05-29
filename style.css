@@ -1,0 +1,41 @@
+body{
+    background-color: aqua;
+    color: rebeccapurple;
+}
+.container{
+    width: 500px;
+    margin: auto;
+}
+.vartical-center{
+    background-color: #c4ecf3;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 7px 7px cornflowerblue;
+}
+ul li{
+    list-style-type: disclosure-closed;
+    line-height: 30px;
+}
+ul li a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.go-back{
+    padding: 11px;
+    border-radius: 13px;
+    border: none;
+    cursor: pointer;
+    background: #93e0e4;
+    font-weight: bolder;
+    color: #3d36a9;
+    box-shadow: 10px 9px 1px #3d36a9;
+}
+.go-back:hover{
+    background: white;
+    transition: 0.5s;
+}
