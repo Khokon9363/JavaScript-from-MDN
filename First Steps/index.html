@@ -14,14 +14,29 @@
     <button class="reload">Reload !!</button>
     
     <div class="container">
-        <h1>Hello from JavaScript Basic</h1> <hr>
-        <button class="btn-event">Click me to start an event !!</button> <hr>
-        <img src="img/JavaScript.jpg" alt="Image for Basic JavaScript"> <hr>
-        <h1 class="user-name">Hello from JavaScript Basic</h1> <hr>
-        <button class="change-user-name-btn">Change name !!</button>
+        <p>Player name is Edward</p> <hr>
+        <button class="create-h1-tag">Create h1 Tag</button>
+        <div class="append-h1"></div> <hr>
+        
+        <!-- Random number game START -->
+        
+        <div class="random-number-game">
+            <h1>Random number guess game</h1>
+            <div class="point"></div>
+            <div class="wrong-or-right"></div>
+            <div class="previous-guesses"></div>
+            <div class="low-or-high"></div> <br>
+            
+            <label for="userGuess">Enter a guess number: </label>
+            <input type="number" id="userGuess">
+            <button onclick="checkGuess()" class="submit-btn">Try !!</button>
+        </div>
+
+        <!-- Random number game END -->
+
     </div>
 
-    <script src="../script.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../script.js" async></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

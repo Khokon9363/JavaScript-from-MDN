@@ -1,0 +1,15 @@
+p {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+/* Number guessing game */
+html {
+    font-family: sans-serif;
+}
+
+.random-number-game{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+}
