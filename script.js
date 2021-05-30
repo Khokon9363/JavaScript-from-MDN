@@ -30,3 +30,11 @@ if(goBackBtn){
         window.location.href = '../index.html'
     })
 }
+
+// ----------------------- Reload Button -----------------
+const reloadBtn = document.querySelector('.reload')
+if(reloadBtn){
+    reloadBtn.addEventListener("click", function(){
+        window.location.reload()
+    })
+}

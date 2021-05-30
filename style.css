@@ -25,7 +25,7 @@ ul li a{
     font-weight: bold;
 }
 
-.go-back{
+.go-back, .reload{
     padding: 11px;
     border-radius: 13px;
     border: none;
@@ -35,7 +35,10 @@ ul li a{
     color: #3d36a9;
     box-shadow: 10px 9px 1px #3d36a9;
 }
-.go-back:hover{
+.go-back:hover, .reload:hover{
     background: white;
     transition: 0.5s;
+}
+.reload{
+    margin-left: 20px;
 }
