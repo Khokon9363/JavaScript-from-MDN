@@ -60,7 +60,7 @@ function checkGuess() { // check the values, validations and user input with ran
     submitBtn.disabled = true
     if(userGuess.value >= 0 && userGuess.value !== '' && userGuess.value <= 100){
         checkRandom()
-        console.log('User guess', userGuess.value);
+        console.log('User guess', userGuess.value)
         console.log('Random guess', randomGuess)
         console.log('Tried', tried)
         userGuess.value = ''
@@ -117,5 +117,32 @@ function resetGame() { // reset the game after success or failed
     userGuess.disabled = true
     setTimeout(() => {
         window.location.reload()
-    }, 4000);
+    }, 4000)
 }
+
+// -------------------------------- Canvas ---------------------------------
+const firstCanvas = document.querySelector('#firstCanvas')
+const secondCanvas = document.querySelector('#secondCanvas')
+const thirdCanvas = document.querySelector('#thirdCanvas')
+
+const firstCTX = firstCanvas.getContext('2d')
+firstCTX.moveTo(10, 10)
+firstCTX.lineTo(100, 100)
+firstCTX.stroke()
+
+const secondCTX = secondCanvas.getContext('2d')
+secondCTX.beginPath()
+secondCTX.arc(10, 10, 100, 45, 120, false)
+secondCTX.stroke()
+
+const thirdCTX = thirdCanvas.getContext('2d')
+thirdCTX.fillStyle = 'red'
+thirdCTX.fillRect(20, 20, 200, 200)
+thirdCTX.stroke()
+
+// -------------------------------- String ---------------------------------
+
+const Mathematics = 95
+document.querySelector('#string').textContent = `You got ${Mathematics} in Mathematics`
+
+console.log(Mathematics, typeof Mathematics)
