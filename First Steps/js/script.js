@@ -54,7 +54,7 @@ function startGame() { // start the game with generating the Random number
     setvariables()
     userGuess.focus()
 }
-startGame()
+// startGame()
 
 function checkGuess() { // check the values, validations and user input with random number
     submitBtn.disabled = true
@@ -146,3 +146,109 @@ const Mathematics = 95
 document.querySelector('#string').textContent = `You got ${Mathematics} in Mathematics`
 
 console.log(Mathematics, typeof Mathematics)
+
+// -------------------------------- String methods ---------------------------------
+
+function stringMethods() {
+    let userName = prompt('Enter your name.')
+    if (userName && userName.trim()) {
+        let trimedUserName = userName.trim()
+            console.log('Stringlength', trimedUserName.length)
+            console.log(`The first character of the string ${userName} =>`, trimedUserName[0])
+            console.log(`The last character of the string ${userName} =>`, trimedUserName[trimedUserName.length - 1])
+
+            console.log('indexOf', trimedUserName.indexOf('Anthony')) // if found return position, if not return -1
+
+            console.log('slice', trimedUserName.slice(trimedUserName.indexOf('Anthony'))) // return Anthony to last
+            console.log('slice', trimedUserName.slice(2, trimedUserName.length)) // return ward Anthony Jenner
+
+            console.log('toUpperCase', trimedUserName.toUpperCase())
+            console.log('toLowerCase', trimedUserName.toLowerCase())
+
+            console.log('replace', trimedUserName.replace('Anthony', 'Yahoo')) // replace if found, if not return full string
+    }
+}
+// stringMethods()
+
+// -------------------------------- String methods - Practice (Filtering greeting messages)---------------------------------
+let greetings = [
+                 'Happy Birthday!',
+                 'Merry Christmas my love',
+                 'A happy Christmas to all the family',
+                 'You\'re all I want for Christmas',
+                 'Get well soon'
+                ]
+let filteredGreetings = []
+
+function checkChristmasGretting() {
+    console.log('Greetings', greetings)
+    
+    for (let i = 0; i < greetings.length; i++) {
+        if(greetings[i].indexOf('Christmas') !== -1){
+            filteredGreetings.push(greetings[i])
+        }
+    }
+    
+    console.log('Filtered greetings', filteredGreetings)
+}
+// checkChristmasGretting()
+
+// -------------------------------- String methods - Practice (Fixing capitalization)---------------------------------
+let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL']
+
+let capitalizedCities = []
+
+function capitalization() {
+    console.log('Cities', cities)
+    
+    for (let i = 0; i < cities.length; i++) {
+        capitalizedCities.push(capitalize(cities[i]))
+    }
+    console.log('Capitalized cities', capitalizedCities)
+}
+// capitalization()
+
+function capitalize(e) {
+    let lowerCase = e.toLowerCase()
+    return lowerCase.replace(lowerCase[0], lowerCase.slice(0, 1).toUpperCase())
+}
+
+// -------------------------------- String methods - Practice (Making new strings from old parts)---------------------------------
+let stations = [
+                'MAN675847583748sjt567654;Manchester Piccadilly',
+                'GNF576746573fhdg4737dh4;Greenfield',
+                'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+                'SYB4f65hf75f736463;Stalybridge',
+                'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'
+               ]
+
+let newStations = []
+
+function createNewStations() {
+    console.log('Stations', stations)
+    
+    for (let i = 0; i < stations.length; i++) {
+        newStations.push(newStation(stations[i]))
+    }
+    console.log('New stations', newStations)
+}
+createNewStations()
+
+function newStation(e) {
+    return e.slice(0, 3) + ' => ' + e.slice(e.slice(3, e.indexOf(';')).length + 4, e.length)
+}
+
+// ------------------------------------ Problem Solving of String -------------------------
+
+// SyntaxError: Unexpected identifier
+// let quoteStart = 'Don't judge each day by the harvest you reap'
+let quoteStart = "Don't judge each day by the harvest you reap"   // add this line
+
+console.log('Unexpected identifier', quoteStart)
+
+
+// ReferenceError: quoteLength is not defined
+let quote = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.' // add this line
+let quoteLength = quote.length
+
+console.log('quoteLength is not defined', quoteLength)
