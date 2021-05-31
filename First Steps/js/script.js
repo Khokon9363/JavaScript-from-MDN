@@ -54,7 +54,7 @@ function startGame() { // start the game with generating the Random number
     setvariables()
     userGuess.focus()
 }
-// startGame()
+startGame()
 
 function checkGuess() { // check the values, validations and user input with random number
     submitBtn.disabled = true
@@ -168,7 +168,7 @@ function stringMethods() {
             console.log('replace', trimedUserName.replace('Anthony', 'Yahoo')) // replace if found, if not return full string
     }
 }
-// stringMethods()
+stringMethods()
 
 // -------------------------------- String methods - Practice (Filtering greeting messages)---------------------------------
 let greetings = [
@@ -191,7 +191,7 @@ function checkChristmasGretting() {
     
     console.log('Filtered greetings', filteredGreetings)
 }
-// checkChristmasGretting()
+checkChristmasGretting()
 
 // -------------------------------- String methods - Practice (Fixing capitalization)---------------------------------
 let cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL']
@@ -206,7 +206,7 @@ function capitalization() {
     }
     console.log('Capitalized cities', capitalizedCities)
 }
-// capitalization()
+capitalization()
 
 function capitalize(e) {
     let lowerCase = e.toLowerCase()
