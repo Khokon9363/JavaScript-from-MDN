@@ -1,3 +1,7 @@
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);
+
 // ----------------------- Home page topics -----------------
 const topics = [
     {
@@ -8,6 +12,14 @@ const topics = [
         url: 'First Steps/index.html',
         name: 'First Steps'
     },
+    {
+        url: 'Building blocks/index.html',
+        name: 'Building blocks'
+    },
+    {
+        url: 'Objects/index.html',
+        name: 'Objects'
+    }
 ]
 
 const wrapper = document.querySelector('ul')

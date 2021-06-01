@@ -252,3 +252,136 @@ let quote = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.' //
 let quoteLength = quote.length
 
 console.log('quoteLength is not defined', quoteLength)
+
+
+// ---------------------------------- Array Methods ---------------------------------
+
+
+// split() used for convert a string to an array
+let str1 = 'Manchester,London,Liverpool,Birmingham,Leeds,Carlisle'
+let str2 = 'Manchester-London-Liverpool-Birmingham-Leeds-Carlisle'
+
+console.log('String to array', stringToArray(',', str1))
+console.log('String to array', stringToArray('-', str2))
+
+console.log('First item', stringToArray('-', str2)[0])
+console.log('Last item', stringToArray('-', str2)[stringToArray('-', str2).length - 1])
+
+// toString() & join() used for convert an array to a string
+console.log('Array to string', stringToArray(',', str1).toString())
+console.log('Array to string', arrayToString(',', stringToArray(',', str1)))
+
+function stringToArray(separator, str) {
+    return str.split(separator)
+}
+function arrayToString(separator, arr) {
+    return arr.join(separator)
+}
+
+let arr1 = [1, 2, 3, 4, 5]
+    arr1.push(6)     // add the specified item on the last
+    arr1.unshift(0)  // add the specified item on the first
+console.log(arr1)
+
+    arr1.pop()    // remove the last item
+    arr1.shift()  // remove the first item
+console.log(arr1)
+
+
+// ----------------------------------- Array Practice (Printing those products) -------------------------
+
+let products = [
+    'Underpants:6.99',
+    'Socks:5.99',
+    'T-shirt:14.99',
+    'Trousers:31.99',
+    'Shoes:23.99'
+               ]
+               let productPrice = 0
+               
+               function countProductPrice() {
+    console.log('Products', products)
+    countTotal(products)
+    console.log('Product total price', productPrice)
+}
+countProductPrice()
+
+function countTotal(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        productPrice += + stringToArray(':', arr[i])[1]  // + sign used for convert String to Number
+        
+        console.log(stringToArray(':', arr[i])[0] + ' =>', stringToArray(':', arr[i])[1] + ' TK')
+    }
+}
+
+// ------------ Array Practice (Your top five unique searches / recent five unique searches) ------------------
+
+let searchItem = document.querySelector(".search-item")
+let search = document.querySelector('.search')
+let searches = []
+
+search.addEventListener("click", function () {
+    if (searchItem.value.trim().length > 0 && !searches.includes(searchItem.value)) {
+        if (searches.length === 5) {
+            searches.pop()
+        }
+        searches.unshift(searchItem.value)
+        console.log(searches)
+        searchItem.value = ''
+    }
+})
+
+// ------------------ Silly Story Generator --------------------------
+
+let customName = document.querySelector('#customName')
+let generate = document.querySelector('.generate')
+let story = document.querySelector('.story')
+let uk = document.querySelector('#uk')
+
+let storyText = `It was 94 fahrenheit outside, so 
+                :insertx: went for a walk. When they got to 
+                :inserty:, they stared in horror for a few moments, then 
+                :insertz:. Bob saw the whole thing, but was not surprised — 
+                :insertx: weighs 300 pounds, and it was a hot day.`
+
+let insertX = [
+                'Willy the Goblin',
+                'Big Daddy',
+                'Father Christmas'
+              ]
+let insertY = [
+                'the soup kitchen',
+                'Disneyland',
+                'the White House'
+              ]
+let insertZ = [
+                'spontaneously combusted',
+                'melted into a puddle on the sidewalk',
+                'turned into a slug and crawled away'
+              ]
+
+generate.addEventListener('click', generateStory)
+
+function generateStory() {
+    newStory = storyText.replace(':insertx:', randomValueFromArray(insertX))
+    newStory = newStory.replace(':insertx:', randomValueFromArray(insertX))
+    newStory = newStory.replace(':inserty:', randomValueFromArray(insertY))
+    newStory = newStory.replace(':insertz:', randomValueFromArray(insertZ))
+    
+    if(customName.value.trim().length > 0){
+        newStory = newStory.replace('Bob', customName.value)
+    }
+    if(uk.checked) {
+        const temperature =  Math.round((94-32) * 5 / 9) + ' centigrade';  // fahrenheit to centigrate
+        newStory = newStory.replace('94 fahrenheit', temperature);
+
+        const weight = Math.round(300 * 0.0714286) + ' stone';
+        newStory = newStory.replace('300 pounds', weight);  // pounds to stone
+    }
+    story.textContent = newStory
+    story.style.visibility = 'visible'
+}
+
+function randomValueFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)]
+}

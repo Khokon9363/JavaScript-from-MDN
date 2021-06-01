@@ -7,9 +7,29 @@ p {
 html {
     font-family: sans-serif;
 }
-
 .random-number-game{
     font-size: 20px;
     font-weight: bold;
     line-height: 50px;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+}
+label {
+    font-weight: bold;  
+}
+div {
+    padding-bottom: 20px;
+}
+input[type="text"] {
+    padding: 5px;
+    width: 150px;
+}
+
+.story{
+    background: #FFC125;
+    color: #5E2612;
+    padding: 10px;
+    visibility: hidden;
 }
