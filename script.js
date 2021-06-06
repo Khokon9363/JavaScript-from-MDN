@@ -22,7 +22,7 @@ const topics = [
     }
 ]
 
-const wrapper = document.querySelector('ul')
+const wrapper = document.querySelector('.lessons')
 if(wrapper){
     var html = ''
     

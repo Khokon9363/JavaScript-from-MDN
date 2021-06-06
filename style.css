@@ -15,12 +15,13 @@ body{
     width: 500px;
     border-radius: 20px;
     box-shadow: 10px 10px 7px 7px cornflowerblue;
+    padding: 20px;
 }
-ul li{
+.lessons{
     list-style-type: disclosure-closed;
     line-height: 30px;
 }
-ul li a{
+.lessons a{
     text-decoration: none;
     font-weight: bold;
 }
