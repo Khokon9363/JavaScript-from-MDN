@@ -98,9 +98,9 @@ const ctx = canvas.getContext('2d')
 const WIDTH = document.documentElement.clientWidth // screen width
 const HEIGHT = document.documentElement.clientHeight // screen height
 
-// setInterval(() => {
-//     draw()
-// }, 50);
+setInterval(() => {
+    draw()
+}, 50);
 
 function draw() {
     ctx.clearRect(0, 0, WIDTH, HEIGHT)
@@ -271,7 +271,6 @@ const video = document.querySelector('video')
 
 video.onclick = function (e) {
     e.target.play()
-    console.log(e)
 }
 video.ondblclick = function (e) {
     e.target.pause()
