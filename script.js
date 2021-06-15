@@ -19,7 +19,11 @@ const topics = [
     {
         url: 'Objects/index.html',
         name: 'Objects'
-    }
+    },
+    {
+        url: 'Guide/index.html',
+        name: 'Guide'
+    },
 ]
 
 const wrapper = document.querySelector('.lessons')
