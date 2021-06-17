@@ -77,11 +77,173 @@ setInterval(() => {
 
 // -------------------------------- Text Formatting ------------------------------
 
+// toLowerCase | toUpperCase | trim
+
 // Number format
 const price = new Intl.NumberFormat('bn-BD', {
     style: 'currency',
     currency: 'BDT',
     minimumFractionDigits: 3
 })
-
 console.log(price.format(120555)) // ১,২০,৫৫৫.০০০৳
+
+// charAt
+let paragraph = 'This is a paragraph'
+
+    console.log('charAt()', paragraph.charAt('10')) // p
+    console.log('charAt()', paragraph.charAt(paragraph.length - 1)) // h
+
+
+// indexOf | indexOfLast
+let line = 'This is a coconut tree. I like coconut'
+
+    console.log('indexOf()', line.indexOf('coconutaaaaa')) // -1
+    console.log('indexOf()', line.indexOf('coconut'))      // 10
+
+    console.log('lastIndexOf()', line.lastIndexOf('coconutaaaaa')) // -1
+    console.log('lastIndexOf()', line.lastIndexOf('coconut'))      // 31
+
+    console.log('indexOf()', line.indexOf('coconut', line.indexOf('coconut') + 1)) // 31
+
+
+// startsWith | endsWith | includes
+let line2 = "I like to play football."
+
+    console.log('startsWith()', line2.startsWith('I'))      // true
+    console.log('startsWith()', line2.startsWith('I like')) // true
+    console.log('startsWith()', line2.startsWith('like'))   // false
+
+    console.log('endsWith()', line2.endsWith('.'))          // true
+    console.log('endsWith()', line2.endsWith('football'))   // false
+    console.log('endsWith()', line2.endsWith('play'))       // false
+
+    console.log('includes()', line2.includes('like'))       // true
+
+// concat
+let str1 = 'Apple'
+let str2 = 'Ball'
+    console.log('concat()', str1.concat(' ', str2))
+    console.log('concat()', str1.concat(', ', str2))
+
+// split
+let text = 'This is a fox'
+    console.log('split()', text.split(' ')) // ["This", "is", "a", "fox"]
+    console.log('split()', text.split(''))  // ["T", "h", "i", "s", " ", "i", "s", " ", "a", " ", "f", "o", "x"]
+    console.log('split()', text.split())    // ["This is a fox"]
+
+// slice
+let text2 = 'I like to write codes using Vanilla JavaScript'
+    console.log('slice()', text2.slice(0, text2.length))
+    console.log('slice()', text2.slice(0, 10))
+    console.log('slice()', text2.slice(1, 10))
+
+// substring | substr
+let text3 = 'I like Vanilla JavaScript'
+    console.log(text3.substring(1, 10)) // include slash
+    console.log(text3.substr(1, 10))    // don't include slash
+
+// replace
+let text4 = 'I live in in Bangladesh'
+    console.log('replace()', text4.replace('in', 'innnnnn'))    // I live innnnnn in Bangladesh
+    console.log('replaceAll()', text4.replaceAll('in', 'innnnnn')) // I live innnnnn innnnnn Bangladesh
+
+// search
+let text5 = 'A B C D E F G H I J K L'
+    console.log('search()', text5.search('D')) // 6
+
+// repeat
+console.log('repeat()', 'I love my country. '.repeat(5))
+
+
+
+// -------------------------------------------------------------------------------
+
+/* JAVASCRIPT DOES NOT SUPPORT ASSOCIATIVE ARRAY */
+
+// ---------------------------- Array methods ------------------------------------
+
+let arr1 = ['A', 'B', 'C']
+    console.log('concat', arr1.concat(['D', 'E', 'F']))   // ["A", "B", "C", "D", "E", "F"]
+
+    console.log('join', arr1.join(', '))                  // A, B, C
+
+    arr1.push('New Item')
+    console.log('push', arr1)                             // ["A", "B", "C", "New Item"]
+
+    arr1.pop()
+    console.log('pop', arr1)                             // ["A", "B", "C"]
+
+    arr1.unshift('New Item')
+    console.log('push', arr1)                             // ["New Item", "A", "B", "C"]
+
+    arr1.shift()
+    console.log('pop', arr1)                             // ["A", "B", "C"]
+
+    console.log('slice', arr1.slice(1, 3))               // ["B", "C"]
+    
+    arr1.forEach(function (e, key) {
+        console.log('forEach', `${key} : ${e}`)
+    })
+    arr1.forEach((e, key) => {
+        console.log('forEach', `${key} : ${e}`)
+    })
+    
+    console.log('reverse', arr1.reverse())               // ["C", "B", "A"]
+
+
+    let map = arr1.map((e) => {
+        return e
+    })
+    console.log('map', map)
+
+    let anotherArr = [1, '2', 3, '4', 5]
+
+    let filter = anotherArr.filter((e) => {
+        return typeof e === 'number'
+    })
+    console.log('filter', filter)
+
+    let every = anotherArr.every((e) => {
+        return typeof e === 'number'
+    })
+    console.log('every', every)           // return true if all items return true
+    
+    let some = anotherArr.some((e) => {
+        return typeof e === 'number'
+    })
+    console.log('some', some)           // return true if at least one item return true
+
+// ------------------------------- Map Object | Set Object ----------------------------------------
+
+let mapObj = new Map()
+    
+    mapObj.set('dog', 'DOG')
+    mapObj.set('cat', 'CAT')
+    mapObj.set('cow', 'COW')
+
+    console.log(mapObj)               // {"dog" => "DOG", "cat" => "CAT", "cow" => "COW"}
+    
+    console.log(mapObj.size)
+
+    console.log(mapObj.get('dog'))
+    console.log(mapObj.has('dog'))
+    
+    mapObj.delete('dog')
+    console.log(mapObj.has('dog'))
+
+    mapObj.clear()
+    console.log(mapObj)
+
+let setObj = new Set()
+    
+    setObj.add('Dog')
+    console.log(setObj)
+
+    console.log(setObj.has('Dog'))
+
+    console.log(setObj.delete('Dog'))
+
+    console.log(setObj.has('Dog'))
+
+    console.log(setObj.size)
+    
