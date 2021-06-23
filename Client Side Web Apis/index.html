@@ -13,10 +13,28 @@
     <button class="go-back">Go Back !!</button>
     <button class="reload">Reload !!</button>
 
+    <!-- Audio API -->
     <div class="container">
-        <audio src="audio/Kalimba.mp3"></audio>
+        <!-- url should be come from a web storage -->
+        <audio 
+            src="https://khokon9363.github.io/JavaScript-from-MDN/Client%20Side%20Web%20Apis/audio/Kalimba.mp3" 
+            crossorigin="anonymous"
+            >
+        </audio>
         <button class="paused">Play</button> <br>
-        <input type="range" min="0" max="1" step="0.01" value="1" class="volume">
+        <input type="range" min="0" max="10" step="0.01" value="1" class="volume">
+    </div>
+
+    <hr>
+    
+    <!-- JS DOM | CRUD -->
+    <div class="container">
+        <h1>Vanilla JavaScript CRUD</h1>
+        <form>
+            <input class="user-input" type="text" placeholder="Enter a book name">
+            <button class="submit-btn" type="submit">Save</button>
+        </form>
+        <ol class="book-wrapper"></ol>
     </div>
 
     <script src="../script.js"></script>
