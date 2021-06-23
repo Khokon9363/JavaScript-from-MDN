@@ -24,6 +24,10 @@ const topics = [
         url: 'Guide/index.html',
         name: 'Guide'
     },
+    {
+        url: 'Client Side Web Apis/index.html',
+        name: 'Client Side Web Apis'
+    },
 ]
 
 const wrapper = document.querySelector('.lessons')
