@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store (fetch)</title>
+  <title>The Can Store</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,24 +18,21 @@
         <div>
           <label for="category">Choose a category:</label>
           <select id="category">
-            <option selected>All</option>
-            <option>Vegetables</option>
-            <option>Meat</option>
-            <option>Soup</option>
+            <option selected value="all">All</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="meat">Meat</option>
+            <option value="soup">Soup</option>
           </select>
         </div>
         <div>
-          <label for="searchTerm">Enter search term:</label>
-          <input type="text" id="searchTerm" placeholder="e.g. beans">
+          <label for="search">Search by name :</label>
+          <input type="text" id="search" placeholder="Ex. baked beans">
         </div>
         <div>
-          <button>Filter results</button>
         </div>
       </form>
     </aside>
-    <main>
-
-    </main>
+    <main id="main"></main>
   </div>
 
   <script src="js/script.js"></script>
