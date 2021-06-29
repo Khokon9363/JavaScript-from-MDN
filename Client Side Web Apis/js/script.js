@@ -100,3 +100,27 @@ function store() {
     li.appendChild(delBtn)
     ol.appendChild(li)
 }
+
+// -------------- web storage | localStorage --------------
+let getNameBtn = document.querySelector('.get-name')
+let removeNameBtn = document.querySelector('.remove-name')
+
+onload = function () {
+    if (getName() == null || getName() == 'null' || !getName().trim()) {
+        let userName = prompt('Enter your name ?')
+        if(userName == null || !userName.trim()) location.reload()
+        localStorage.setItem('userName', userName)
+    }
+}
+
+getNameBtn.onclick = function () {
+    alert(`Saved name is ` + getName())
+}
+removeNameBtn.onclick = function () {
+    localStorage.removeItem('userName')
+    alert(`The saved name removed successfully`)
+    location.reload()
+}
+function getName() {
+    return localStorage.getItem('userName')
+}

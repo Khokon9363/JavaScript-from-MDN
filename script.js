@@ -28,6 +28,10 @@ const topics = [
         url: 'Client Side Web Apis/index.html',
         name: 'Client Side Web Apis'
     },
+    {
+        url: 'Re-introducton of JavaScript/index.html',
+        name: 'Re-introducton of JavaScript'
+    },
 ]
 
 const wrapper = document.querySelector('.lessons')
