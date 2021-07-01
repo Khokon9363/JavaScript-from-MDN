@@ -27,10 +27,6 @@ const topics = [
     {
         url: 'Client Side Web Apis/index.html',
         name: 'Client Side Web Apis'
-    },
-    {
-        url: 'Web Apis/index.html',
-        name: 'Web Apis'
     }
 ]
 
